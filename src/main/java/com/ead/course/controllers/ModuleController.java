@@ -1,6 +1,5 @@
 package com.ead.course.controllers;
 
-import com.ead.course.dtos.CourseDto;
 import com.ead.course.dtos.ModuleDto;
 import com.ead.course.models.CourseModel;
 import com.ead.course.models.ModuleModel;
@@ -46,7 +45,7 @@ public class ModuleController {
     }
 
     @PostMapping("/courses/{courseId}/modules")
-    public ResponseEntity<Object> saveModule(@PathVariable(value = "courseId") UUID courseId,  @RequestBody @Valid ModuleDto moduleDto) {
+    public ResponseEntity<Object> saveModule(@PathVariable(value = "courseId") UUID courseId, @RequestBody @Valid ModuleDto moduleDto) {
         Optional<CourseModel> courseModelOptional = courseService.findById(courseId);
 
         if (!courseModelOptional.isPresent()) {
