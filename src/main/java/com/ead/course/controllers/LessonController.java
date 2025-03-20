@@ -34,7 +34,7 @@ public class LessonController {
     }
 
     @GetMapping("/modules/{moduleId}/modules/{lessonId}")
-    public ResponseEntity<Object> getOneModule(@PathVariable(value = "moduleId") UUID moduleId, @PathVariable(value = "lessonId") UUID lessonId) {
+    public ResponseEntity<Object> getOneLesson(@PathVariable(value = "moduleId") UUID moduleId, @PathVariable(value = "lessonId") UUID lessonId) {
         Optional<LessonModel> lessonModelOptional = lessonService.findLessonIntoModule(lessonId, moduleId);
 
         if (!lessonModelOptional.isPresent()) {
