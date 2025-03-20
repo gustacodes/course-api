@@ -50,7 +50,7 @@ public class LessonController {
     }
 
     @PostMapping("/modules/{moduleId}/lessons")
-    public ResponseEntity<Object> saveLessons(@PathVariable(value = "moduleId") UUID moduleId, @RequestBody @Valid LessonDto lessonDto) {
+    public ResponseEntity<Object> saveLesson(@PathVariable(value = "moduleId") UUID moduleId, @RequestBody @Valid LessonDto lessonDto) {
         Optional<ModuleModel> moduleModelOptional = moduleService.findById(moduleId);
 
         if (!moduleModelOptional.isPresent()) {
@@ -77,7 +77,7 @@ public class LessonController {
     }
 
     @PutMapping("/courses/{moduleId}/modules/{lessonId}")
-    public ResponseEntity<Object> updateModule(@PathVariable(value = "moduleId") UUID moduleId, @PathVariable(value = "lessonId") UUID lessonId, @RequestBody @Valid LessonDto lessonDto) {
+    public ResponseEntity<Object> updateLesson(@PathVariable(value = "moduleId") UUID moduleId, @PathVariable(value = "lessonId") UUID lessonId, @RequestBody @Valid LessonDto lessonDto) {
         Optional<LessonModel> lessonModelOptional = lessonService.findLessonIntoModule(lessonId, moduleId);
 
         if (!lessonModelOptional.isPresent()) {
