@@ -36,7 +36,6 @@ public class CourseController {
         } else {
             return ResponseEntity.status(HttpStatus.OK).body(courseService.findAll(spec, pageable));
         }
-
     }
 
     @GetMapping("/{courseId}")
