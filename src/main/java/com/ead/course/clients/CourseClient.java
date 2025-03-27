@@ -31,7 +31,7 @@ public class CourseClient {
 
     public Page<UserDto> getAllUsersByCourse(UUID courseId, Pageable pageable) {
         List<UserDto> searchResult = new ArrayList<>();
-        String url = utilService.createUrl(courseId, pageable);
+        String url = utilService.createUrlGetAllUsersByCourse(courseId, pageable);
 
         log.debug("Request URL: {}", url);
         log.info("Request URL: {}", url);
