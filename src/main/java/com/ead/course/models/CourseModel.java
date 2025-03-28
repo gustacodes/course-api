@@ -64,7 +64,7 @@ public class CourseModel implements Serializable {
     private Set<CourseUserModel> coursesUsers;
 
     public CourseUserModel convertToCourseUserModel(UUID userId) {
-        return new CourseUserModel(null, userId, this);
+        return new CourseUserModel(null, this, userId);
     }
 
 }
