@@ -1,5 +1,7 @@
 server:
   port: 8082
+  servlet:
+    context-path: '/ead-course/'
 
 spring:
   application:
@@ -17,6 +19,10 @@ spring:
     properties:
       hibernate:
         show_sql: true
+output:
+  ansi:
+    enable: Always
+
 logging:
   level:
     com.ead: TRACE
